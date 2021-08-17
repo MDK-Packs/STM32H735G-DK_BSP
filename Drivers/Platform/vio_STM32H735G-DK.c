@@ -5,7 +5,7 @@
  * @date     28. July 2021
  ******************************************************************************/
 /*
- * Copyright (c) 2021 - 2021 Arm Limited (or its affiliates). All rights reserved.
+ * Copyright (c) 2021 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
