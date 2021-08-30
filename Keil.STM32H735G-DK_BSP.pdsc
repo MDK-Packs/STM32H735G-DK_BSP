@@ -7,6 +7,12 @@
   <repository type="git">https://github.com/MDK-Packs/STM32H735G-DK_BSP.git</repository>
 
   <releases>
+    <release version="1.0.0-dev3">
+      Update CMSIS-Driver VIO: add ip4_2a and ip6_2a functions
+      Projects examples update:
+      - override default HAL_InitTick function
+      - Platform example: correct SDMMC initialization
+    </release>
     <release version="1.0.0-dev2">
       Drivers:
       - VIO: correct disclaimer
@@ -255,7 +261,7 @@
     </bundle>
 
     <!-- VIO component for STM32H735G-DK -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant= "STM32H735G-DK" Cversion="1.0.0" Capiversion="0.1.0"   condition="STM32H735G-DK VIO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant= "STM32H735G-DK" Cversion="1.0.1" Capiversion="0.1.0"   condition="STM32H735G-DK VIO">
       <description>Virtual I/O implementation for STM32H735G-DK</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD

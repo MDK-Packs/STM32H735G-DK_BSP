@@ -107,6 +107,7 @@ The example project can be re-configured to work on custom hardware. Refer to ["
 | USART1 global interrupt                 | 8                | Generate IRQ handler, Call HAL handler
 | Ethernet global interrupt               | 8                | Generate IRQ handler, Call HAL handler
 | SPI5 global                             | 8                | Generate IRQ handler, Call HAL handler
+| SDMMC1 global interrupt                 | 8                | none
 
 ### Connectivity Peripherals Configuration
 

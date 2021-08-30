@@ -121,6 +121,16 @@ uint32_t HAL_GetTick (void) {
   }
   return ++ticks;
 }
+
+/**
+  * Override default HAL_InitTick function
+  */
+HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority) {
+  
+  UNUSED(TickPriority);
+
+  return HAL_OK;
+}
 /* USER CODE END 0 */
 
 /**
@@ -152,7 +162,7 @@ int main(void)
   PeriphCommonClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  SystemCoreClockUpdate();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -283,16 +293,19 @@ static void MX_ETH_Init(void)
 
   /* USER CODE END ETH_Init 0 */
 
+   static uint8_t MACAddr[6];
+
   /* USER CODE BEGIN ETH_Init 1 */
 
   /* USER CODE END ETH_Init 1 */
   heth.Instance = ETH;
-  heth.Init.MACAddr[0] =   0x00;
-  heth.Init.MACAddr[1] =   0x80;
-  heth.Init.MACAddr[2] =   0xE1;
-  heth.Init.MACAddr[3] =   0x00;
-  heth.Init.MACAddr[4] =   0x00;
-  heth.Init.MACAddr[5] =   0x00;
+  MACAddr[0] = 0x00;
+  MACAddr[1] = 0x80;
+  MACAddr[2] = 0xE1;
+  MACAddr[3] = 0x00;
+  MACAddr[4] = 0x00;
+  MACAddr[5] = 0x00;
+  heth.Init.MACAddr = &MACAddr[0];
   heth.Init.MediaInterface = HAL_ETH_RMII_MODE;
   heth.Init.TxDesc = DMATxDscrTab;
   heth.Init.RxDesc = DMARxDscrTab;
@@ -338,7 +351,6 @@ static void MX_SDMMC1_SD_Init(void)
   hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
   hsd1.Init.ClockDiv = 0;
-  hsd1.Init.TranceiverPresent = SDMMC_TRANSCEIVER_NOT_PRESENT;
   if (HAL_SD_Init(&hsd1) != HAL_OK)
   {
     Error_Handler();

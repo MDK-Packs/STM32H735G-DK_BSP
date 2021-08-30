@@ -80,6 +80,16 @@ uint32_t HAL_GetTick (void) {
   }
   return ++ticks;
 }
+
+/**
+  * Override default HAL_InitTick function
+  */
+HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority) {
+  
+  UNUSED(TickPriority);
+
+  return HAL_OK;
+}
 /* USER CODE END 0 */
 
 /**
@@ -105,7 +115,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  SystemCoreClockUpdate();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
