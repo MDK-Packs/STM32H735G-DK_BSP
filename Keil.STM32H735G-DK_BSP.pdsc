@@ -288,6 +288,7 @@
       <book category="overview"  name="https://www.st.com/resource/en/data_brief/stm32h735g-dk.pdf" title="Data brief" public="true"/>
       <book category="manual"    name="https://www.st.com/resource/en/user_manual/um2679-discovery-kit-with-stm32h735ig-mcu-stmicroelectronics.pdf" title="User Manual" public="true"/>
       <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1520-h735i-b02_schematic.pdf"     title="Schematics" public="true"/>
+      <book category="other"     name="Documents/README.md" title="Guide" public="true"/>
       <mountedDevice    deviceIndex="0" Dvendor="STMicroelectronics:13" Dname="STM32H735IGKx"/> 
       <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32H735"/>
       <feature type="ODbg"      n="1"              name="On-board ST-LINK-V3E"/>
@@ -298,7 +299,7 @@
       <feature type="USB"       n="1"              name="USB OTG FS (Full speed) with micro-AB Connector"/>
       <feature type="Button"    n="2"              name="Push-buttons: User and Reset"/>
       <feature type="LED"       n="8"              name="LEDs: COM, Power, User LEDs"/>
-	  <feature type="LineIn"    n="1"              name="Stereo Line IN headset jack"/>
+	    <feature type="LineIn"    n="1"              name="Stereo Line IN headset jack"/>
       <feature type="LineOut"   n="1"              name="Stereo Line OUT headset jack including analog microphone input"/>
       <feature type="GLCD"      n="1"  m="480.272" name="4.3-inch 480x272 TFT color LCD with capacitive touch panel"/>
       <feature type="MemCard"   n="1"              name="microSD card"/>
