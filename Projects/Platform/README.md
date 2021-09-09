@@ -104,18 +104,20 @@ The example project can be re-configured to work on custom hardware. Refer to ["
 | Debug monitor                           | 0                | Generate IRQ handler
 | Pendable request for system service     | 0                | none
 | Time base: System tick timer            | 0                | none
+| DMA1 stream0 global interrupt           | 8                | Generate IRQ handler, Call HAL handler
+| DMA1 stream1 global interrupt           | 8                | Generate IRQ handler, Call HAL handler
 | USART1 global interrupt                 | 8                | Generate IRQ handler, Call HAL handler
 | Ethernet global interrupt               | 8                | Generate IRQ handler, Call HAL handler
 | SPI5 global                             | 8                | Generate IRQ handler, Call HAL handler
-| SDMMC1 global interrupt                 | 8                | none
+| SDMMC1 global interrupt                 | 8                | Call HAL handler
 
 ### Connectivity Peripherals Configuration
 
-| Peripheral   | Mode / Settings                                                                                                    | IRQ | DMA | Note
-|:-------------|:-------------------------------------------------------------------------------------------------------------------|:----|:----|:----
-| SPI5         | Full-Duplex Master, Hardware NSS Signal=off, Do Not Generate Initialization Function Call                          | yes | no  | Arduino UNO R3 connector (CN8)
-| USART1       | Asynchronous, Hardware Flow Control=off, Do Not Generate Initialization Function Call                              | yes | no  | Arduino UNO R3 connector (CN8)
-| USART3       | Asynchronous, Hardware Flow Control=off, Baud Rate: 115200 Bits/s, Word Length: 8 Bits, Parity: None, Stop Bits: 1 | no  | no  | ST-LINK Virtual COM port
+| Peripheral   | Mode / Settings                                                                                                    | IRQ | DMA                                              | Note
+|:-------------|:-------------------------------------------------------------------------------------------------------------------|:----|:-------------------------------------------------|:----
+| SPI5         | Full-Duplex Master, Hardware NSS Signal=off, Do Not Generate Initialization Function Call                          | yes | SPI1_RX = DMA1 Stream 0, SPI1_TX = DMA1 Stream 1 | Arduino UNO R3 connector (CN8)
+| USART1       | Asynchronous, Hardware Flow Control=off, Do Not Generate Initialization Function Call                              | yes | no                                               | Arduino UNO R3 connector (CN8)
+| USART3       | Asynchronous, Hardware Flow Control=off, Baud Rate: 115200 Bits/s, Word Length: 8 Bits, Parity: None, Stop Bits: 1 | no  | no                                               | ST-LINK Virtual COM port
 
 **STDIO** is routed to ST-LINK Virtual COM port (USART3)
 

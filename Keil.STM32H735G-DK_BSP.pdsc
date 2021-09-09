@@ -7,6 +7,13 @@
   <repository type="git">https://github.com/MDK-Packs/STM32H735G-DK_BSP.git</repository>
 
   <releases>
+    <release version="1.0.0-dev4">
+      Projects examples update:
+      - update to latest packs (STM32H7xx_DFP_V2.8.0)
+      - Platform example:
+      -- enable DMA on SPI driver
+      -- change RAM memory area (to AXI-SRAM D1)
+    </release>
     <release version="1.0.0-dev3">
       Update CMSIS-Driver VIO: add ip4_2a and ip6_2a functions
       Projects examples update:
@@ -36,7 +43,7 @@
 
   <requirements>
     <packages>
-      <package vendor="Keil" name="STM32H7xx_DFP" version="2.7.0-0"/>
+      <package vendor="Keil" name="STM32H7xx_DFP" version="2.8.0-0"/>
     </packages>
   </requirements>
 
@@ -299,7 +306,7 @@
       <feature type="USB"       n="1"              name="USB OTG FS (Full speed) with micro-AB Connector"/>
       <feature type="Button"    n="2"              name="Push-buttons: User and Reset"/>
       <feature type="LED"       n="8"              name="LEDs: COM, Power, User LEDs"/>
-	    <feature type="LineIn"    n="1"              name="Stereo Line IN headset jack"/>
+      <feature type="LineIn"    n="1"              name="Stereo Line IN headset jack"/>
       <feature type="LineOut"   n="1"              name="Stereo Line OUT headset jack including analog microphone input"/>
       <feature type="GLCD"      n="1"  m="480.272" name="4.3-inch 480x272 TFT color LCD with capacitive touch panel"/>
       <feature type="MemCard"   n="1"              name="microSD card"/>

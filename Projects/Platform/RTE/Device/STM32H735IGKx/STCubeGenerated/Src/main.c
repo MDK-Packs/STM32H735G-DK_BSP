@@ -78,6 +78,8 @@ ETH_HandleTypeDef heth;
 SD_HandleTypeDef hsd1;
 
 SPI_HandleTypeDef hspi5;
+DMA_HandleTypeDef hdma_spi5_rx;
+DMA_HandleTypeDef hdma_spi5_tx;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
@@ -92,9 +94,9 @@ void PeriphCommonClock_Config(void);
 static void MPU_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_USART1_UART_Init(void);
 static void MX_SPI5_Init(void);
 static void MX_SDMMC1_SD_Init(void);
+static void MX_DMA_Init(void);
 static void MX_ETH_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -168,6 +170,8 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART3_UART_Init();
+  MX_USART1_UART_Init();
+  MX_DMA_Init();
   /* USER CODE BEGIN 2 */
 #ifdef RTE_VIO_BOARD
   vioInit();
@@ -414,7 +418,7 @@ static void MX_SPI5_Init(void)
   * @param None
   * @retval None
   */
-static void MX_USART1_UART_Init(void)
+void MX_USART1_UART_Init(void)
 {
 
   /* USER CODE BEGIN USART1_Init 0 */
@@ -502,6 +506,25 @@ static void MX_USART3_UART_Init(void)
   /* USER CODE BEGIN USART3_Init 2 */
 
   /* USER CODE END USART3_Init 2 */
+
+}
+
+/**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 8, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 8, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
 
 }
 

@@ -64,6 +64,7 @@ extern void app_initialize (void);
 #define ARDUINO_IO_D10_GPIO_Port GPIOF
 #define MemoryCard_CD0_Pin GPIO_PIN_5
 #define MemoryCard_CD0_GPIO_Port GPIOF
+void   MX_USART1_UART_Init(void);
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
