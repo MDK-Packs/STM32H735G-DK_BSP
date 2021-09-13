@@ -7,29 +7,17 @@
   <repository type="git">https://github.com/MDK-Packs/STM32H735G-DK_BSP.git</repository>
 
   <releases>
-    <release version="1.0.0-dev4">
-      Projects examples update:
-      - update to latest packs (STM32H7xx_DFP_V2.8.0)
-      - Platform example:
-      -- enable DMA on SPI driver
-      -- change RAM memory area (to AXI-SRAM D1)
-    </release>
-    <release version="1.0.0-dev3">
-      Update CMSIS-Driver VIO: add ip4_2a and ip6_2a functions
-      Projects examples update:
-      - override default HAL_InitTick function
-      - Platform example: correct SDMMC initialization
-    </release>
-    <release version="1.0.0-dev2">
+    <release version="1.0.0-rc0">
+      Board description and documentation for STM32H735G-DK
+      Synchronized with STM32CubeH7 Firmware Package version V1.9.0
       Drivers:
-      - VIO: correct disclaimer
-    </release>
-    <release version="1.0.0-dev1">
-      Platform project:
-      - rename Name of Executable to image
-    </release>
-    <release version="1.0.0-dev0">
-      Initial development version.
+      - Board Drivers, Components, Config files
+      - CMSIS-Driver VIO
+      Utilities:
+      - LCD Utility Drivers
+      Example projects:
+      - CMSIS-RTOS2 Blinky (verify the basic tool setup)
+      - CMSIS-RTOS2 Platform (configure the board hardware)
     </release>
   </releases>
 
