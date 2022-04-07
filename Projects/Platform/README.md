@@ -11,7 +11,7 @@ The real-time operating system [Keil RTX5](https://arm-software.github.io/CMSIS_
 
 It is configured with the following settings:
 
-- [Global Dynamic Memory size](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#systemConfig): 24000 bytes
+- [Global Dynamic Memory size](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#systemConfig): 32768 bytes
 - [Default Thread Stack size](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#threadConfig): 3072 bytes
 - [Event Recorder Configuration](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#evtrecConfig)
   - [Global Initialization](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#evtrecConfigGlobIni): 1
@@ -115,7 +115,7 @@ The example project can be re-configured to work on custom hardware. Refer to ["
 
 | Peripheral   | Mode / Settings                                                                                                    | IRQ | DMA                                              | Note
 |:-------------|:-------------------------------------------------------------------------------------------------------------------|:----|:-------------------------------------------------|:----
-| SPI5         | Full-Duplex Master, Hardware NSS Signal=off, Do Not Generate Initialization Function Call                          | yes | SPI1_RX = DMA1 Stream 0, SPI1_TX = DMA1 Stream 1 | Arduino UNO R3 connector (CN8)
+| SPI5         | Full-Duplex Master, Hardware NSS Signal=off, Do Not Generate Initialization Function Call                          | yes | SPI5_RX = DMA1 Stream 0, SPI5_TX = DMA1 Stream 1 | Arduino UNO R3 connector (CN8)
 | USART1       | Asynchronous, Hardware Flow Control=off, Do Not Generate Initialization Function Call                              | yes | no                                               | Arduino UNO R3 connector (CN8)
 | USART3       | Asynchronous, Hardware Flow Control=off, Baud Rate: 115200 Bits/s, Word Length: 8 Bits, Parity: None, Stop Bits: 1 | no  | no                                               | ST-LINK Virtual COM port
 
@@ -127,7 +127,7 @@ The example project can be re-configured to work on custom hardware. Refer to ["
 |:-------------|:----------
 | ETH_MAC0     | ETH
 | ETH_PHY0     | LAN8742A (external)
-| MCI0         | SDMMC
+| MCI0         | SDMMC1
 | SPI5         | SPI5
 | USART1       | USART1
 | USART3       | USART3

@@ -25,16 +25,4 @@ LR_IROM1 0x08000000 0x00100000  {      ; load region size_region
    *(.bss.driver.usart1)
    *(.bss.driver.spi5)
   }
-  RW_ETH_RX_DESC 0x30004000 0x00000060 {
-    *(.RxDecripSection)
-  }
-  RW_ETH_TX_DESC 0x30004060 0x00000060 {
-    *(.TxDecripSection)
-  }
-  RW_ETH_RX_BUF  0x30004100 0x00001800 {
-    *(.RxArraySection)
-  }
-  RW_ETH_TX_BUF  0x30005900 0x00001800 {
-    *(.TxArraySection)
-  }
 }

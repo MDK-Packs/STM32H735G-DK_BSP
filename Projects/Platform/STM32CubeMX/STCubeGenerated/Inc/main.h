@@ -58,6 +58,13 @@ extern void app_initialize (void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define ARDUINO_IO_D9_Pin GPIO_PIN_7
+#define ARDUINO_IO_D9_GPIO_Port GPIOB
+#define ARDUINO_IO_D10_Pin GPIO_PIN_6
+#define ARDUINO_IO_D10_GPIO_Port GPIOF
+#define MemoryCard_CD0_Pin GPIO_PIN_5
+#define MemoryCard_CD0_GPIO_Port GPIOF
+void   MX_USART1_UART_Init(void);
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -67,5 +74,3 @@ extern void app_initialize (void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -1,5 +1,6 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
+ * Copyright (c) 2020-2022 Arm Limited (or its affiliates).
+ * All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -84,6 +85,8 @@ __NO_RETURN static void thrButton (void *arg) {
  *---------------------------------------------------------------------------*/
 static void app_main (void *argument) {
   (void)argument;
+
+  vioPrint(vioLevelHeading, "Blinky");
 
   tid_thrLED = osThreadNew(thrLED, NULL, NULL);         // Create LED thread
   if (tid_thrLED == NULL) { /* add error handling */ }
