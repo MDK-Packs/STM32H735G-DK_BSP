@@ -7,7 +7,7 @@
   <repository type="git">https://github.com/MDK-Packs/STM32H735G-DK_BSP.git</repository>
 
   <releases>
-    <release version="2.0.0-rc0">
+    <release version="2.0.0" date="2022-04-08">
       Synchronize with Keil:STM32H7xx_DFP.3.0.0
       Drivers:
       - CMSIS-Driver VIO:
