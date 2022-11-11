@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd" schemaVersion="1.7.2">
+<package xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd" schemaVersion="1.7.7">
   <name>STM32H735G-DK_BSP</name>
   <vendor>Keil</vendor>
   <description>STMicroelectronics STM32H7 Series STM32H735G-DK Board Support Pack</description>
@@ -7,6 +7,11 @@
   <repository type="git">https://github.com/MDK-Packs/STM32H735G-DK_BSP.git</repository>
 
   <releases>
+    <release version="2.0.1-dev1">
+      Drivers:
+      - CMSIS-Driver VIO:
+      -- Correct variable initialization to avoid compiler warnings
+    </release>
     <release version="2.0.1-dev0">
       Example projects:
       - Remove unused components
@@ -275,7 +280,7 @@
     </bundle>
 
     <!-- VIO component for STM32H735G-DK -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant= "STM32H735G-DK" Cversion="1.1.0" Capiversion="0.1.0"   condition="STM32H735G-DK VIO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant= "STM32H735G-DK" Cversion="1.1.1" Capiversion="0.1.0"   condition="STM32H735G-DK VIO">
       <description>Virtual I/O implementation for STM32H735G-DK</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
