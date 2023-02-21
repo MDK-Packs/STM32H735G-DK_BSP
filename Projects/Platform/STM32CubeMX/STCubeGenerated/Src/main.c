@@ -53,19 +53,16 @@
 ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
 #pragma location=0x30004060
 ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
-#pragma location=0x30004100
-uint8_t Rx_Buff[ETH_RX_DESC_CNT][ETH_MAX_PACKET_SIZE]; /* Ethernet Receive Buffers */
 
 #elif defined ( __CC_ARM )  /* MDK ARM Compiler */
 
 __attribute__((at(0x30004000))) ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
 __attribute__((at(0x30004060))) ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
-__attribute__((at(0x30004100))) uint8_t Rx_Buff[ETH_RX_DESC_CNT][ETH_MAX_PACKET_SIZE]; /* Ethernet Receive Buffer */
 
 #elif defined ( __GNUC__ ) /* GNU Compiler */
 ETH_DMADescTypeDef DMARxDscrTab[ETH_RX_DESC_CNT] __attribute__((section(".RxDecripSection"))); /* Ethernet Rx DMA Descriptors */
 ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT] __attribute__((section(".TxDecripSection")));   /* Ethernet Tx DMA Descriptors */
-uint8_t Rx_Buff[ETH_RX_DESC_CNT][ETH_MAX_PACKET_SIZE] __attribute__((section(".RxArraySection"))); /* Ethernet Receive Buffers */
+
 #endif
 
 ETH_TxPacketConfig TxConfig;
@@ -90,10 +87,10 @@ void SystemClock_Config(void);
 void PeriphCommonClock_Config(void);
 static void MPU_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART3_UART_Init(void);
+static void MX_DMA_Init(void);
 static void MX_SPI5_Init(void);
 static void MX_SDMMC1_SD_Init(void);
-static void MX_DMA_Init(void);
+static void MX_USART3_UART_Init(void);
 static void MX_ETH_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -172,9 +169,9 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART3_UART_Init();
-  MX_USART1_UART_Init();
   MX_DMA_Init();
+  MX_USART1_UART_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 #ifdef RTE_VIO_BOARD
   vioInit();
@@ -621,15 +618,6 @@ void MPU_Config(void)
   MPU_InitStruct.BaseAddress = 0x30004000;
   MPU_InitStruct.Size = MPU_REGION_SIZE_256B;
   MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
-
-  HAL_MPU_ConfigRegion(&MPU_InitStruct);
-
-  /** Initializes and configures the Region and the memory to be protected
-  */
-  MPU_InitStruct.Number = MPU_REGION_NUMBER3;
-  MPU_InitStruct.BaseAddress = 0x90000000;
-  MPU_InitStruct.Size = MPU_REGION_SIZE_16MB;
-  MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL1;
 
   HAL_MPU_ConfigRegion(&MPU_InitStruct);
   /* Enables the MPU */
