@@ -7,6 +7,12 @@
   <repository type="git">https://github.com/MDK-Packs/STM32H735G-DK_BSP.git</repository>
 
   <releases>
+    <release version="2.0.1-dev2">
+      Example projects:
+      - Update files generated with CubeMx
+      - Minor update to linker scripts (EventRecorder positioned with .bss.noinit section name)
+      - Remove MPU region for HyperRAM (HyperRAM is not configured for this board in CubeMx projects)
+    </release>
     <release version="2.0.1-dev1">
       Drivers:
       - CMSIS-Driver VIO:
