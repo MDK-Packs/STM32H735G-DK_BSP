@@ -1073,7 +1073,7 @@
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
         <LayAsnName>ARM::CMSIS:OS Tick:SysTick</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
+        <LayAsnLayerName>RTOS</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
@@ -1098,6 +1098,16 @@
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
         <LayAsnName>Keil::Device:STM32Cube Framework:STM32CubeMX</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>1</LayAsnType>
+        <LayAsnName>Keil::Board Support&amp;STM32H735G-DK:Drivers:BUS</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>1</LayAsnType>
+        <LayAsnName>Keil::Board Support&amp;STM32H735G-DK:Drivers:Basic I/O</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
     </LayAssign>
